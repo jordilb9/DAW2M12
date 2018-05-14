@@ -33,7 +33,7 @@
       </form>
         -->
         <form class="navbar-form navbar-right" method="GET" action="{{url('/resultadoBusqueda/')}}" style="margin-right: 0px;">
-            <a href="">Login/Registrarse</a>
+            <a href="" class="navbar-brand" >Login/Registrarse</a>
             
         </form>
     </div>
