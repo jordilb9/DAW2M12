@@ -5,15 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        
-        <script src="{{ url('js/bootstrap.min.js')}}"></script>
         <script src="{{ url('js/jquery.min.js')}}"></script>
+        <script src="{{ url('js/bootstrap.min.js')}}"></script>
         <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        
+        
         <!-- Styles -->
         <style>
             html, body {
@@ -25,51 +25,48 @@
                 margin: 0;
             }
             
+            .navbar-brand {
+                padding:0px;
+            }
+              .navbar-brand>img {
+                height: 100%;
+                width: auto;
+             }
+/*            .example4 .navbar-brand>img {
+                padding: 7px 14px;
+            }*/
+            
             #logo{
-                height: 8vh;
-                width: 15vh
+                height: 5,6vh;
+                width: 10vh
             }
 
-            .full-height {
-                height: 100vh;
+            .navbar-alignit .navbar-header {
+              -webkit-transform-style: preserve-3d;
+              -moz-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+              height: 50px;
             }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
+            .navbar-alignit .navbar-brand {
+                top: 50%;
+                display: block;
                 position: relative;
+                height: auto;
+                transform: translate(0,-50%);
+                margin-right: 15px;
+                margin-left: 15px;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+
+
+
+
+            .navbar-nav>li>.dropdown-menu {
+                    z-index: 9999;
             }
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            body {
+              font-family: "Arial";
             }
         </style>
     </head>
