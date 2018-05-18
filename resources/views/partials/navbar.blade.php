@@ -17,7 +17,7 @@
           <li><a href="#">Equipos</a></li>
           <li><a href="#">Personajes</a></li>  
         </ul>
-          
+       {{session_start()}}
     @if($_SESSION['User']!=null )
         <ul class="nav navbar-nav navbar-right">
 
