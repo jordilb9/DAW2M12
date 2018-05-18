@@ -7,7 +7,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img id="logo" src="{{asset('assets/images/logo.jpg')}}"></a>
+        <a class="navbar-brand" href="{{url('/')}}"><img id="logo" src="{{asset('assets/images/logo.jpg')}}"></a>
         
       </div>
       <div id="navbar4" class="navbar-collapse collapse">
@@ -17,12 +17,12 @@
           <li><a href="#">Equipos</a></li>
           <li><a href="#">Personajes</a></li>  
         </ul>
-    @if( Auth::check() )
+          
+    @if($_SESSION['User']!=null )
         <ul class="nav navbar-nav navbar-right">
 
             <li>
                 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                                                     Cerrar sesión
                 </a>
                                             <form id="logout-form" action="#" method="POST" style="display: none;">
@@ -32,9 +32,9 @@
         </ul>
     @endif
 		
-    @if(!Auth::check())
+    @if($_SESSION['User']==null)
         <ul class="nav navbar-nav navbar-right">
-                <li class="nav navbar-nav navbar-right"><a href="#">Login/Register</a></li>
+                <li class="nav navbar-nav navbar-right"><a href="{{url('/LoginRegister/')}}">Login/Register</a></li>
         </ul>
     @endif  
 

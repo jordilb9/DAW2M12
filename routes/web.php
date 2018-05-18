@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/LoginRegister', function () {
+    return view('LoginRegister');
+});
+
+Route::post('/Login', "LoginRegisterController@login");
+
+Route::post('/Register', "LoginRegisterController@register");
+
 
 //pelopicopata
 //66666

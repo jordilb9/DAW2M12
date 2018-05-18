@@ -41,6 +41,12 @@
                 width: 10vh
             }
 
+            #ImgLoginRegister{
+                height: 50vh;
+                width: 40vh;
+                margin-top:-240px;
+            }
+
             .navbar-alignit .navbar-header {
               -webkit-transform-style: preserve-3d;
               -moz-transform-style: preserve-3d;
@@ -62,11 +68,22 @@
 
 
             .navbar-nav>li>.dropdown-menu {
-                    z-index: 9999;
+                 z-index: 9999;
             }
 
             body {
-              font-family: "Arial";
+                 font-family: "Arial";
+            }
+            
+            
+            select:required:invalid {
+                color: #999;
+            }
+            option[value=””][disabled] {
+                display: none;
+            }
+            option {
+                color: #000;
             }
         </style>
     </head>
