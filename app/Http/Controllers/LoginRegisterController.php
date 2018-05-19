@@ -23,7 +23,7 @@ class LoginRegisterController extends Controller
 
            $log = new Logs;
            $log->IdUsuario=$resultat[0]->IdUsuario;
-           $log->Descripcion="L'usuari ".$resultat[0]->User." a fet login";
+           $log->Descripcion="El usuario ".$resultat[0]->User." a hecho login";
            $log->Fechaq =date('Y-m-d H:i:s');
            $log->save();
  

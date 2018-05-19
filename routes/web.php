@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Principal');
 });
 
 Route::get('/LoginRegister', function () {
@@ -22,6 +22,8 @@ Route::get('/LoginRegister', function () {
 Route::post('/Login', "LoginRegisterController@login");
 
 Route::post('/Register', "LoginRegisterController@register");
+
+Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
 
 
 //pelopicopata

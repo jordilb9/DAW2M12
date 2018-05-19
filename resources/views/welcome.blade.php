@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        
         <!-- Styles -->
         <style>
             html, body {
@@ -33,9 +33,6 @@
                 height: 100%;
                 width: auto;
             }
-            /*            .example4 .navbar-brand>img {
-                            padding: 7px 14px;
-                        }*/
 
             #logo{
                 height: 5,6vh;
@@ -65,7 +62,7 @@
             }
 
 
-
+            
 
 
             .navbar-nav>li>.dropdown-menu {
@@ -148,7 +145,101 @@
             .fa-twitch {
                 background: purple;
                 color: white;
+            }   
+            
+            #principal{
+                width: 100%;
+                height: auto;
             }
+
+
+            .img-responsive,
+            .thumbnail > img,
+            .thumbnail a > img,
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+
+            /* ------------------- Carousel Styling ------------------- */
+
+            .carousel-inner {
+              border-radius: 15px;
+            }
+
+            .carousel-caption {
+              background-color: rgba(0,0,0,.5);
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              z-index: 10;
+              padding: 0 0 10px 25px;
+              color: #fff;
+              text-align: left;
+            }
+
+            .carousel-indicators {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              width: 100%;
+              z-index: 15;
+              margin: 0;
+              padding: 0 25px 25px 0;
+              text-align: center;
+            }
+
+            .carousel-control.left,
+            .carousel-control.right {
+              background-image: none;
+            }
+
+
+            /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+
+            .section-white {
+               padding: 10px 0;
+            }
+
+            .section-white {
+              background-color: #fff;
+              color: #555;
+            }
+
+            @media screen and (min-width: 768px) {
+
+              .section-white {
+                 padding: 1.5em 0;
+              }
+
+            }
+
+            @media screen and (min-width: 992px) {
+
+              .container {
+                max-width: 930px;
+              }
+
+            }
+            
+            #ImgCarousel-1{
+                width: 1200px;
+                height: 450px;
+            }
+            #ImgCarousel-2{
+                width: 1200px;
+                height: 450px;
+            }
+            #ImgCarousel-3{
+                width: 1200px;
+                height: 450px;
+            }
+            
+
         </style>
     </head>
     <body>

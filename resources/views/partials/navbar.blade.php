@@ -12,27 +12,21 @@
         </div>
         <div id="navbar4" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Blog</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#">Liga</a></li>
                 <li><a href="#">Equipos</a></li>
                 <li><a href="#">Personajes</a></li>  
             </ul>
+            
             {{session_start()}}
-            @if($_SESSION['User']!=null )
-            <ul class="nav navbar-nav navbar-right">
 
-                <li>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Cerrar sesión
-                    </a>
-                    <form id="logout-form" action="#" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
+            @if($_SESSION!=null )
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav navbar-nav navbar-right"><a href="{{url('/CerrarSesion/')}}">Cerrar sesión</a></li>
             </ul>
             @endif
 
-            @if($_SESSION['User']==null)
+            @if($_SESSION==null)
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav navbar-nav navbar-right"><a href="{{url('/LoginRegister/')}}">Login/Register</a></li>
             </ul>
