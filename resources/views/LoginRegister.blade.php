@@ -32,13 +32,13 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-9" >
-                                <button type="submit" class="btn btn-primary col-md-offset-6">
+                            <div class="col-md-0" id="botonLogRecu">
+                                <button type="submit" class="btn btn-primary ">
                                     Login
                                 </button>
                                 <br>
 
-                                <a class="btn btn-link col-md-offset-2" href="">
+                                <a class="btn btn-link " href="">
                                     ¿Olvidaste tu contraseña?
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                     <form class="form-horizontal" method="POST" action="Register">
                         {{ csrf_field() }}
                         
-                        <div class="panel-heading col-md-offset-4"><h1>Registro</h1></div>
+                        <div class="panel-heading" id="Registro"><h1>Registro</h1></div>
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-2">
@@ -119,8 +119,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-10">
-                                <button type="submit" class="btn btn-success col-md-offset-6">
+                            <div class="col-md-0" id="botonRegistro">
+                                <button type="submit" class="btn btn-success">
                                     Registrarse
                                 </button>
                                 <br>

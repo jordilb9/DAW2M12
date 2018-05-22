@@ -152,12 +152,6 @@
             
             /*Fin footer*/
 
-            #principal{
-                width: 100%;
-                height: auto;
-            }
-
-
             .img-responsive,
             .thumbnail > img,
             .thumbnail a > img,
@@ -250,19 +244,18 @@
             
             
             /*Centrar contenido*/
-            #inciarSesion{
+            #inciarSesion,#Registro,#botonLogRecu,#botonRegistro,#imgTextP{
                 text-align: center;
             }
-            #imgTextP{
-                text-align: center;
-            }
+  
             #ImgCentralP{
-                width: 25%;
+                width: 50%;
                 height: auto;
             }
             
-            #textPrincipal{
-                
+            #carousel-example-generic{
+                margin:5%;
+                text-align: center;
             }
 
             /* Añadir Partido*/
