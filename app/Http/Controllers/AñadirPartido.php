@@ -20,6 +20,22 @@ class añadirPartido extends Controller
             $partida->Fecha=$request->Fecha;
             $partida->save();
             
+            
+            $jugador = new JugadorPartida;
+            $jugador->IdPartida=$request->IdPartida;
+            $jugador->IdUsuario=$request->IdUsuario;
+            $jugador->IdPersonaje=$request->IdPersonaje;
+            $jugador->Creditos=$request->Creditos;
+            $jugador->Kills=$request->Kills;
+            $jugador->Deaths=$request->Deaths;
+            $jugador->Assists=$request->Assists;
+            $jugador->Racha=$request->Racha;
+            $jugador->TiempoObj=$request->TiempoObj;
+            $jugador->Daño=$request->Daño;
+            $jugador->BlocDaño=$request->BlocDaño;
+            $jugador->Curacion=$request->Curacion;
+            
+            
         }
     }
 }

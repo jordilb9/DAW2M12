@@ -44,7 +44,6 @@
         var session;
         $.ajax({url: cadena})
                 .done(function (data) {
-                    console.log(data);
                     session = data.session_id;
                 })
                 .fail(function (jqXHR, text, errorThrown) {
@@ -65,24 +64,26 @@
             var hasheo2 = devID + metodo2 + authkey + timestamp;
             var signature2 = md5(hasheo2)
             var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + jugador;
+            var mapa, hora, nombre, heroe, kills, assists, deaths, oro, opm, daño, recibido, heal, mitigado, racha, objetivo
             $.ajax({url: cadena2})
                     .done(function (data) {
-                        var mapa = data[0].Map_Game;
-                        var hora = data[0].Entry_Datetime;
+                        mapa = data[0].Map_Game;
+                        hora = data[0].Entry_Datetime;
                         for (var i = 0; i < data.length; i++) {
-                            var nombre = data[i].playerName;
-                            var heroe = data[i].Reference_Name;
-                            var kills = data[i].Kills_Player;
-                            var assists = data[i].Assists;
-                            var deaths = data[i].Deaths;
-                            var oro = data[i].Gold_Earned;
-                            var opm = data[i].Gold_Per_Minute;
-                            var daño = data[i].Damage_Player;
-                            var recibido = data[i].Damage_Taken;
-                            var heal = data[i].Healing;
-                            var mitigado = data[i].Damage_Mitigated;
-                            var racha = data[i].Killing_Spree;
-                            var objetivo = data[i].Objective_Assists;
+                            nombre = data[i].playerName;
+                            heroe = data[i].Reference_Name;
+                            kills = data[i].Kills_Player;
+                            assists = data[i].Assists;
+                            deaths = data[i].Deaths;
+                            oro = data[i].Gold_Earned;
+                            opm = data[i].Gold_Per_Minute;
+                            daño = data[i].Damage_Player;
+                            recibido = data[i].Damage_Taken;
+                            heal = data[i].Healing;
+                            mitigado = data[i].Damage_Mitigated;
+                            racha = data[i].Killing_Spree;
+                            objetivo = data[i].Objective_Assists;
+                            
                             //console.log(nombre+" "+heroe+" "+kills+" "+assists+" "+deaths)
                         }
 
