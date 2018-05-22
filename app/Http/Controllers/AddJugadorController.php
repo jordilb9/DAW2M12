@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Usuario;
+use App\Logs;
+use App\Partida;
 
-class añadirPartido extends Controller
+class AddJugadorController extends Controller
 {
-    function añadirPartido(Request $request){
-        session_start();
+    //
+    public function addPartido(Request $request){
+        echo "hola";
+        $recoger="<scrip>recogerApi()</script>";
+        echo $recoger;
+        /*session_start();
         
         $resultat = Usuario::where('IdUsuario','=',$request->input('IdUsuario'))->where('Rango','=','2');
         
@@ -36,6 +43,6 @@ class añadirPartido extends Controller
             $jugador->Curacion=$request->Curacion;
             
             
-        }
+        }*/
     }
 }

@@ -23,13 +23,13 @@ Route::get('/AñadirPartido', function (){
     return view('AñadirPartido');
 });
 
+Route::post('/AddJugador', 'AddJugadorController@addPartido');
+
 Route::post('/Login', "LoginRegisterController@login");
 
 Route::post('/Register', "LoginRegisterController@register");
 
 Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
-
-Route::get('/AñadeeJugador', 'AñadirPartido@añadirPartido');
 
 //pelopicopata
 //66666
