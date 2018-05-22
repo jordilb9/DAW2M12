@@ -19,12 +19,17 @@ Route::get('/LoginRegister', function () {
     return view('LoginRegister');
 });
 
+Route::get('AñadirPartido', function (){
+    return view('AñadirPartido');
+});
+
 Route::post('/Login', "LoginRegisterController@login");
 
 Route::post('/Register', "LoginRegisterController@register");
 
 Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
 
+Route::get('/AñadiPartido', 'AñadirPartido@añadirPartido');
 
 //pelopicopata
 //66666
