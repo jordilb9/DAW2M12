@@ -7,6 +7,8 @@
 
         <script src="{{ url('js/jquery.min.js')}}"></script>
         <script src="{{ url('js/bootstrap.min.js')}}"></script>
+        <script src="{{url('js/md5.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <title>Laravel</title>
 
@@ -14,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <!-- Styles -->
         <style>
             html, body {
@@ -62,7 +64,7 @@
             }
 
 
-            
+
 
 
             .navbar-nav>li>.dropdown-menu {
@@ -94,9 +96,10 @@
                 margin-bottom: 50px;
                 text-transform: uppercase;
             }
-            
+            /*Footer*/
             footer{
                 color: white;
+                width: 100%;
             }
             footer a{
                 color: #bfffff;
@@ -114,7 +117,7 @@
                 padding-top: 2em;
                 color: white;
             }
-            
+
             /* Style all font awesome icons */
             .fa {
                 padding: 14px;
@@ -147,6 +150,8 @@
                 color: white;
             }   
             
+            /*Fin footer*/
+
             #principal{
                 width: 100%;
                 height: auto;
@@ -158,44 +163,44 @@
             .thumbnail a > img,
             .carousel-inner > .item > img,
             .carousel-inner > .item > a > img {
-              display: block;
-              width: 100%;
-              height: auto;
+                display: block;
+                width: 100%;
+                height: auto;
             }
 
             /* ------------------- Carousel Styling ------------------- */
 
             .carousel-inner {
-              border-radius: 15px;
+                border-radius: 15px;
             }
 
             .carousel-caption {
-              background-color: rgba(0,0,0,.5);
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              z-index: 10;
-              padding: 0 0 10px 25px;
-              color: #fff;
-              text-align: left;
+                background-color: rgba(0,0,0,.5);
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 10;
+                padding: 0 0 10px 25px;
+                color: #fff;
+                text-align: left;
             }
 
             .carousel-indicators {
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              left: 0;
-              width: 100%;
-              z-index: 15;
-              margin: 0;
-              padding: 0 25px 25px 0;
-              text-align: center;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                z-index: 15;
+                margin: 0;
+                padding: 0 25px 25px 0;
+                text-align: center;
             }
 
             .carousel-control.left,
             .carousel-control.right {
-              background-image: none;
+                background-image: none;
             }
             
             #slide{
@@ -206,30 +211,30 @@
             /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
 
             .section-white {
-               padding: 10px 0;
+                padding: 10px 0;
             }
 
             .section-white {
-              background-color: #fff;
-              color: #555;
+                background-color: #fff;
+                color: #555;
             }
 
             @media screen and (min-width: 768px) {
 
-              .section-white {
-                 padding: 1.5em 0;
-              }
+                .section-white {
+                    padding: 1.5em 0;
+                }
 
             }
 
             @media screen and (min-width: 992px) {
 
-              .container {
-                max-width: 930px;
-              }
+                .container {
+                    max-width: 930px;
+                }
 
             }
-            
+
             #ImgCarousel-1{
                 width: 100%;
                 height: auto;
@@ -260,6 +265,57 @@
                 
             }
 
+            /* Añadir Partido*/
+            .featurette {
+                display: table;
+                width: 100%;
+                height: 30%; /* set a pixel height and then remove the body,html height */
+                vertical-align: middle;
+                
+            }
+            .featurette-inner {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .featurette .search {
+                padding: 3%;
+                max-width: 980px; /*max width of search*/
+                margin: 0 auto;
+            }
+            .no-margin-top {
+                margin-top: 0
+            }
+
+
+            /* ------ form-control-lg */
+            .form-control-lg {
+                min-height: 46px;
+                border-radius: 6px;
+                font-size: 18px;
+                line-height: normal;
+            }
+
+
+            /* ------ disjointed form group custom */
+            .featurette .search.has-button .btn {
+                margin-top: 5px;
+                width: 100%;
+            }
+            @media (min-width:480px) { 
+                .featurette .search.has-button .form-group {
+                    position: relative;
+                    padding-right: 99px; /*space for button*/
+                }
+                .featurette .search.has-button .btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: auto;
+                    margin: 0;
+                }
+            }
+            
+            /*Fin añadir Partido*/
         </style>
     </head>
     <body>
@@ -270,3 +326,4 @@
         @include('partials.footer')
     </body>
 </html>
+
