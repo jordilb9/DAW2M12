@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -18,15 +21,15 @@
                 <li><a href="#">Personajes</a></li>  
             </ul>
             
-            {{session_start()}}
+            
 
-            @if($_SESSION!=null )
+            @if (isset($_SESSION['idUsuario']))
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav navbar-nav navbar-right"><a href="{{url('/CerrarSesion/')}}">Cerrar sesión</a></li>
             </ul>
             @endif
 
-            @if($_SESSION==null)
+            @if (!isset($_SESSION['idUsuario']))
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav navbar-nav navbar-right"><a href="{{url('/LoginRegister/')}}">Login/Register</a></li>
             </ul>

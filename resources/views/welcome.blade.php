@@ -152,12 +152,6 @@
             
             /*Fin footer*/
 
-            #principal{
-                width: 100%;
-                height: auto;
-            }
-
-
             .img-responsive,
             .thumbnail > img,
             .thumbnail a > img,
@@ -202,6 +196,10 @@
             .carousel-control.right {
                 background-image: none;
             }
+            
+            #slide{
+                text-align: center;
+            }
 
 
             /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
@@ -232,16 +230,32 @@
             }
 
             #ImgCarousel-1{
-                width: 1200px;
-                height: 450px;
+                width: 100%;
+                height: auto;
             }
             #ImgCarousel-2{
-                width: 1200px;
-                height: 450px;
+                width: 100%;
+                height: auto;
             }
             #ImgCarousel-3{
-                width: 1200px;
-                height: 450px;
+                width: 100%;
+                height: auto;
+            }
+            
+            
+            /*Centrar contenido*/
+            #inciarSesion,#Registro,#botonLogRecu,#botonRegistro,#imgTextP{
+                text-align: center;
+            }
+  
+            #ImgCentralP{
+                width: 50%;
+                height: auto;
+            }
+            
+            #carousel-example-generic{
+                margin:5%;
+                text-align: center;
             }
 
             /* Añadir Partido*/
@@ -305,3 +319,4 @@
         @include('partials.footer')
     </body>
 </html>
+

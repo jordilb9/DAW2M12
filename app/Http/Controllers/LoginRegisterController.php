@@ -10,11 +10,12 @@ class LoginRegisterController extends Controller
 {
     //
     function login(Request $request){
-        session_start();
+       
 
         $resultat = Usuario::where('User', '=', $request->input('user'))->where('Contrasenya', '=', $request->input('password'))->get();
 
         if (count($resultat)==1){
+           session_start();
             
            $_SESSION['idUsuario']=$resultat[0]->IdUsuario;
            $_SESSION['User']=$resultat[0]->User;
