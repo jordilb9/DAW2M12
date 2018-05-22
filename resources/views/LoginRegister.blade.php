@@ -12,7 +12,7 @@
                     <form class="form-horizontal" method="POST" action="Login">
                         {{ csrf_field() }}
                         
-                        <div class="panel-heading col-md-offset-1"><h1>Iniciar Sesión</h1></div>
+                        <div class="panel-heading " id="inciarSesion"><h1>Iniciar Sesión</h1></div>
 
                         <div class="form-group{{isset($invalido) ? ' has-error' : '' }}">
                             <div class="col-md-8 col-md-offset-2">
@@ -32,13 +32,13 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-9">
+                            <div class="col-md-9" >
                                 <button type="submit" class="btn btn-primary col-md-offset-6">
                                     Login
                                 </button>
                                 <br>
 
-                                <a class="btn btn-link col-md-offset-3" href="">
+                                <a class="btn btn-link col-md-offset-2" href="">
                                     ¿Olvidaste tu contraseña?
                                 </a>
                             </div>
@@ -103,7 +103,7 @@
                         
                         <div class="form-group{{isset($RegistroInvalido) ? ' has-error' : '' }}">
                             <div class="col-md-8 col-md-offset-2">
-                                <input id="user" type="text" class="form-control" name="user" placeholder="Username"  required>
+                                <input id="userReg" type="text" class="form-control" name="user" placeholder="Username"  required>
                             </div>  
                         </div>
 
@@ -132,7 +132,7 @@
         </div>
         
         
-        <div class="col-md-4 ">
+        <div class="col-md-4">
                   <img id="ImgLoginRegister" src="{{asset('assets/images/header-grohk.png')}}">
         </div>
 
