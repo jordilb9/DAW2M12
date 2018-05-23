@@ -9,6 +9,7 @@
         <script src="{{ url('js/bootstrap.min.js')}}"></script>
         <script src="{{url('js/md5.js')}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <title>Laravel</title>
 

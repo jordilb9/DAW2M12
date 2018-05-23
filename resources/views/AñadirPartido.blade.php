@@ -106,7 +106,7 @@
                     );
         }
         $("#add").click(function () {
-            $.get("../public/AddJugador",{usuari: "hola", pass: "123"})
+            $.get("../public/AddJugador",{usuari: "eugenio", pass: "123"})
                     .done(function(data){alert(data)})
                     .fail(function(){alert("peta")});
         });

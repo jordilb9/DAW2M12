@@ -11,9 +11,10 @@ class AddJugadorController extends Controller
 {
     //
     public function addPartido(Request $request){
-        echo "hola";
+        echo $request->usuari." ".$request->pass;
+        /*echo "hola";
         $recoger="<scrip>recogerApi()</script>";
-        echo $recoger;
+        echo $recoger;*/
         /*session_start();
         
         $resultat = Usuario::where('IdUsuario','=',$request->input('IdUsuario'))->where('Rango','=','2');
