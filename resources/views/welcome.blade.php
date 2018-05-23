@@ -117,7 +117,7 @@
                 padding-top: 2em;
                 color: white;
             }
-
+            
             /* Style all font awesome icons */
             .fa {
                 padding: 14px;
@@ -129,10 +129,6 @@
                 border-radius: 50%;
             }
 
-            /* Add a hover effect if you want */
-            .fa:hover {
-                opacity: 0.7;
-            }
             /* Twitter */
             .fa-twitter {
                 background: #55ACEE;

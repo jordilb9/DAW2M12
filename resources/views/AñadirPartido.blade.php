@@ -105,8 +105,12 @@
                     }
                     );
         }
-        /*$("#add").click(function () {
-
+        $("#add").click(function () {
+            $.get("../public/AddJugador",{usuari: "hola", pass: "123"})
+                    .done(function(data){alert(data)})
+                    .fail(function(){alert("peta")});
+        });
+        /*
             $.get("../public/AddJugador", function (data) {
                 $("body")
                         .append("Name: " + data.name) // John
