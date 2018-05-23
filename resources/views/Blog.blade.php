@@ -14,8 +14,9 @@
     @endif
 </div>
 <div id="cuerpoBlog">
-        <p id='tituloB' class="text-left">Ultima Noticia</p>
+        <p id='tituloB' class="text-left">&nbsp; Ultima Noticia</p>
         <img id="ImgCentralB" src="{{asset('assets/images/blogImg.jpg')}}">
+        <p></p>
 </div>
 
 @stop

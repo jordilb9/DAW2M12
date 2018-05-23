@@ -331,7 +331,7 @@
             
             #tituloB{
                 color:yellow;
-                font-size: 30px;
+                font-size:30px;   
             }
             
 

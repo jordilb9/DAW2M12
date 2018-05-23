@@ -23,6 +23,10 @@ Route::get('/Blog', function () {
     return view('Blog');
 });
 
+Route::get('/EntradaBlog', function () {
+    return view('EntradaBlog');
+});
+
 Route::get('AñadirPartido', function (){
     return view('AñadirPartido');
 });
