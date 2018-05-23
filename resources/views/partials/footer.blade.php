@@ -17,8 +17,23 @@
                             <li><a href="#">Personajes</a></li>
                         </ul>
                     </div>
+
+                    @if(Session::has('Rango'))
+                        @if (Session::get('Rango')==2)
+                        <div class="footer-pad">
+                            <h4>Acceso rápido</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="{{url('/')}}">Menú Principal</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Liga</a></li>
+                                <li><a href="#">Equipos</a></li>
+                                <li><a href="#">Personajes</a></li>
+                            </ul>
+                        </div>
+                        @endif
+                    @endif
                 </div>
-                
                 <div class="col-6 col-sm-3">
                     <!--Column1-->
                     <div class="footer-pad">

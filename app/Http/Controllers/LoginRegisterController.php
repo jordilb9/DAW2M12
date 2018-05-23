@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Usuario;
 use App\Logs;
+use Illuminate\Support\Facades\Session;
 
 class LoginRegisterController extends Controller
 {
@@ -14,12 +15,10 @@ class LoginRegisterController extends Controller
 
         $resultat = Usuario::where('User', '=', $request->input('user'))->where('Contrasenya', '=', $request->input('password'))->get();
 
-        if (count($resultat)==1){
-           session_start();
-            
-           $_SESSION['idUsuario']=$resultat[0]->IdUsuario;
-           $_SESSION['User']=$resultat[0]->User;
-           $_SESSION['Rango']=$resultat[0]->Rango;
+        if (count($resultat)==1){           
+           Session::put('idUsuario',$resultat[0]->IdUsuario);
+           Session::put('User',$resultat[0]->User);
+           Session::put('Rango',$resultat[0]->Rango);
            
 
            $log = new Logs;

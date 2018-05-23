@@ -244,11 +244,21 @@
             
             
             /*Centrar contenido*/
-            #inciarSesion,#Registro,#botonLogRecu,#botonRegistro,#imgTextP{
+            #inciarSesion,#Registro,#botonLogRecu,#botonRegistro,#imgTextP,#imgBlog{
                 text-align: center;
+            }
+            
+            #nuevaEntrada{
+                float:right;
+                margin-top:10%;
             }
   
             #ImgCentralP{
+                width: 50%;
+                height: auto;
+            }
+            
+            #ImgCentralB{
                 width: 50%;
                 height: auto;
             }
@@ -308,9 +318,29 @@
                 }
             }
             
+            /*Blog*/
+            #cuerpoBlog{
+                position: relative;
+                margin-top: -13%;
+                margin-bottom: 5%;
+                background-color:#f58484;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            
+            #tituloB{
+                color:yellow;
+                font-size: 30px;
+            }
+            
+
+            
+            
             /*Fin añadir Partido*/
         </style>
     </head>
+   
     <body>
         @include('partials.navbar')
         <div  class="container main">

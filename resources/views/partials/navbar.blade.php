@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -15,7 +13,7 @@ session_start();
         </div>
         <div id="navbar4" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Blog</a></li>
+                <li><a href="{{url('/Blog')}}">Blog</a></li>
                 <li><a href="#">Liga</a></li>
                 <li><a href="#">Equipos</a></li>
                 <li><a href="#">Personajes</a></li>  
@@ -23,13 +21,13 @@ session_start();
             
             
 
-            @if (isset($_SESSION['idUsuario']))
+            @if (Session::has('idUsuario'))
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav navbar-nav navbar-right"><a href="{{url('/CerrarSesion/')}}">Cerrar sesión</a></li>
             </ul>
             @endif
 
-            @if (!isset($_SESSION['idUsuario']))
+            @if (!Session::has('idUsuario'))
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav navbar-nav navbar-right"><a href="{{url('/LoginRegister/')}}">Login/Register</a></li>
             </ul>
