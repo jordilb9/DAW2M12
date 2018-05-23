@@ -3,8 +3,8 @@
     <div class="footer-middle">
         <div class="container">
             <div class="row">
-                
-                <div class="col-6 col-sm-9">
+
+                <div class="col-7 col-md-4">
                     <!--Column1-->
                     <div class="footer-pad">
                         <h4>Acceso rápido</h4>
@@ -17,24 +17,21 @@
                             <li><a href="#">Personajes</a></li>
                         </ul>
                     </div>
-
-                    @if(Session::has('Rango'))
-                        @if (Session::get('Rango')==2)
-                        <div class="footer-pad">
-                            <h4>Acceso rápido</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="{{url('/')}}">Menú Principal</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Liga</a></li>
-                                <li><a href="#">Equipos</a></li>
-                                <li><a href="#">Personajes</a></li>
-                            </ul>
-                        </div>
-                        @endif
-                    @endif
                 </div>
-                <div class="col-6 col-sm-3">
+                @if(Session::has('Rango'))
+                @if (Session::get('Rango')==2)
+                <div class="col-7 col-md-4">
+                    <div class="footer-pad">
+                        <h4>Panel de administrador</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="{{url('/AñadirPartido')}}">Añadir partido</a></li>
+                        </ul>
+                    </div>
+                </div>
+                @endif
+                @endif
+
+                <div class="col-4 col-md-4">
                     <!--Column1-->
                     <div class="footer-pad">
                         <h4>Popular Departments</h4>

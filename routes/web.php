@@ -31,7 +31,7 @@ Route::get('AñadirPartido', function (){
     return view('AñadirPartido');
 });
 
-Route::post('/AddJugador', 'AddJugadorController@addPartido');
+Route::get('/AddJugador', 'AddJugadorController@addPartido');
 
 Route::post('/Login', "LoginRegisterController@login");
 
