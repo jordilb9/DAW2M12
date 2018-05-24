@@ -117,9 +117,10 @@
                                     @endif
                             </div>
                         </div>
-                        
-                        <div class="g-recaptcha" data-sitekey="6LdiBFsUAAAAAFdUVDkoictOwRlGHWmNUBH1s462"></div>
-
+                        <div class="form-group">
+                        <div class="g-recaptcha col-md-8 col-md-offset-2
+                             " data-sitekey="6LdiBFsUAAAAAFdUVDkoictOwRlGHWmNUBH1s462"></div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-0" id="botonRegistro">
                                 <button type="submit" class="btn btn-success">

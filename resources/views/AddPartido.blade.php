@@ -44,16 +44,17 @@
 
         var session;
         $.ajax({url: cadena})
-         .done(function (data) {
-         console.log(data);
-         session = data.session_id;
-         })
-         .fail(function (jqXHR, text, errorThrown) {
-         console.log(jqXHR + "---" + text + "---" + errorThrown);
-         console.log(jqXHR);
-         })
+                .done(function (data) {
+                    console.log(data);
+                    session = data.session_id;
+                })
+                .fail(function (jqXHR, text, errorThrown) {
+                    console.log(jqXHR + "---" + text + "---" + errorThrown);
+                    console.log(jqXHR);
+                })
 
-        function recogerApi() {
+
+        $("#add").click(function () {
             var x = new Date();
             var y = x.getUTCFullYear().toString();
             var m = (x.getUTCMonth() + 1).toString();
@@ -72,12 +73,19 @@
 
             var hasheo2 = devID + metodo2 + authkey + timestamp;
             var signature2 = md5(hasheo2)
-            var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + jugador;
-            var mapa, hora, nombre, heroe, kills, assists, deaths, oro, opm, daño, recibido, heal, mitigado, racha, objetivo
+            var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + $('#id').val();
+            var mapa, hora, nombre, heroe, kills, assists, deaths, oro, opm, dmg, recibido, heal, mitigado, racha, objetivo
             $.ajax({url: cadena2})
                     .done(function (data) {
                         mapa = data[0].Map_Game;
                         hora = data[0].Entry_Datetime;
+                        $.get("../public/AddPartido2", {mapa: mapa, hora: hora})
+                                .done(function (data) {
+                                    alert(data)
+                                })
+                                .fail(function () {
+                                    alert("peta")
+                                });
                         for (var i = 0; i < data.length; i++) {
                             nombre = data[i].playerName;
                             heroe = data[i].Reference_Name;
@@ -86,13 +94,21 @@
                             deaths = data[i].Deaths;
                             oro = data[i].Gold_Earned;
                             opm = data[i].Gold_Per_Minute;
-                            daño = data[i].Damage_Player;
+                            dmg = data[i].Damage_Player;
                             recibido = data[i].Damage_Taken;
                             heal = data[i].Healing;
                             mitigado = data[i].Damage_Mitigated;
                             racha = data[i].Killing_Spree;
                             objetivo = data[i].Objective_Assists;
                             //console.log(nombre+" "+heroe+" "+kills+" "+assists+" "+deaths)
+                            $.get("../public/AddJugador", {nombre: nombre, heroe: heroe, kills: kills, assists: assists,
+                                deaths: deaths, oro: oro, opm: opm, dmg: dmg, recibido: recibido, heal: heal, mitigado: mitigado, racha: racha, objetivo: objetivo})
+                                    .done(function (data) {
+                                        alert(data)
+                                    })
+                                    .fail(function () {
+                                        alert("peta")
+                                    });
                         }
 
                     })
@@ -104,59 +120,9 @@
                         console.log("Fí")
                     }
                     );
-        }
-        $("#add").click(function () {
-            $.get("../public/AddJugador",{usuari: "eugenio", pass: "123"})
-                    .done(function(data){alert(data)})
-                    .fail(function(){alert("peta")});
+
+
         });
-        /*
-            $.get("../public/AddJugador", function (data) {
-                $("body")
-                        .append("Name: " + data.name) // John
-                        .append("Time: " + data.time); //  2pm
-            }, "json");*/
-            //$.get("../public/AddJugador", {'choices[]': ["Jon", "Susan"]});
-            //alert(session);
-            //alert("hi");
-            /*var jugador = $("#id").val()
-             var metodo2 = "getmatchdetails"
-             
-             var hasheo2 = devID + metodo2 + authkey + timestamp;
-             var signature2 = md5(hasheo2)
-             var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + jugador;
-             var mapa, hora, nombre, heroe, kills, assists, deaths, oro, opm, daño, recibido, heal, mitigado, racha, objetivo
-             $.ajax({url: cadena2})
-             .done(function (data) {
-             mapa = data[0].Map_Game;
-             hora = data[0].Entry_Datetime;
-             for (var i = 0; i < data.length; i++) {
-             nombre = data[i].playerName;
-             heroe = data[i].Reference_Name;
-             kills = data[i].Kills_Player;
-             assists = data[i].Assists;
-             deaths = data[i].Deaths;
-             oro = data[i].Gold_Earned;
-             opm = data[i].Gold_Per_Minute;
-             daño = data[i].Damage_Player;
-             recibido = data[i].Damage_Taken;
-             heal = data[i].Healing;
-             mitigado = data[i].Damage_Mitigated;
-             racha = data[i].Killing_Spree;
-             objetivo = data[i].Objective_Assists;
-             $.post("../public/AddJugador", { 'choices[]': [ "Jon", "Susan" ] });
-             //console.log(nombre+" "+heroe+" "+kills+" "+assists+" "+deaths)
-             }
-             
-             })
-             .fail(function (jqXHR, text, errorThrown) {
-             console.log(jqXHR + "---" + text + "---" + errorThrown);
-             console.log(jqXHR);
-             })
-             .always(function (x) {
-             console.log("Fí")
-             });*/
-        /*});*/
     });
 
 

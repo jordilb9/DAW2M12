@@ -11,8 +11,9 @@ class LoginRegisterController extends Controller {
 
     //
     function login(Request $request) {
-
-
+        
+        $clientIP = \Request::ip();
+        
         $resultat = Usuario::where('User', '=', $request->input('user'))->where('Contrasenya', '=', $request->input('password'))->get();
 
         if (count($resultat) == 1) {

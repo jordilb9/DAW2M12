@@ -23,11 +23,19 @@ Route::get('/Blog', function () {
     return view('Blog');
 });
 
-Route::get('/AñadirPartido', function (){
-    return view('AñadirPartido');
+Route::get('/AddPartido', function (){
+    return view('AddPartido');
 });
 
-Route::get('/AddJugador', 'AddJugadorController@addPartido');
+Route::get('/ActulizaPersonajes', function(){
+    return view('ActualizaPersonaje');
+});
+
+Route::get('/AddPartido2', 'AddJugadorController@addPartido');
+
+Route::get('/AddPersonaje', 'AddJugadorController@actualizaPersonajes');
+
+Route::get('/AddJugador', 'AddJugadorController@addJugador');
 
 Route::post('/Login', "LoginRegisterController@login");
 
