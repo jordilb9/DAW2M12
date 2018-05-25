@@ -25,6 +25,8 @@ Route::get('/Blog', function () {
 
 Route::get('/AddPartido', function (){
     return view('AddPartido');
+});
+    
 Route::get('/CargarBlog', "BlogController@cargarBlog");
 
 Route::get('/AñadirBlog', function () {
