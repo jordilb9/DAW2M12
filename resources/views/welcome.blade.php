@@ -9,6 +9,7 @@
         <script src="{{ url('js/bootstrap.min.js')}}"></script>
         <script src="{{url('js/md5.js')}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <title>Laravel</title>
 
@@ -117,7 +118,7 @@
                 padding-top: 2em;
                 color: white;
             }
-            
+
             /* Style all font awesome icons */
             .fa {
                 padding: 14px;
@@ -145,8 +146,30 @@
                 background: purple;
                 color: white;
             }   
-            
+
             /*Fin footer*/
+
+            /*Sidebar*/
+            .sidenav {
+                height: 100%;
+                width: 160px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 20px;
+            }
+
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+            /*Fin Sidebar*/
 
             .img-responsive,
             .thumbnail > img,
@@ -192,7 +215,7 @@
             .carousel-control.right {
                 background-image: none;
             }
-            
+
             #slide{
                 text-align: center;
             }
@@ -237,28 +260,28 @@
                 width: 100%;
                 height: auto;
             }
-            
-            
+
+
             /*Centrar contenido*/
             #inciarSesion,#Registro,#botonLogRecu,#botonRegistro,#imgTextP,#imgBlog{
                 text-align: center;
             }
-            
+
             #nuevaEntrada{
                 float:right;
                 margin-top:10%;
             }
-  
+
             #ImgCentralP{
                 width: 50%;
                 height: auto;
             }
-            
+
             #ImgCentralB{
                 width: 50%;
                 height: auto;
             }
-            
+
             #carousel-example-generic{
                 margin:5%;
                 text-align: center;
@@ -270,7 +293,7 @@
                 width: 100%;
                 height: 30%; /* set a pixel height and then remove the body,html height */
                 vertical-align: middle;
-                
+
             }
             .featurette-inner {
                 display: table-cell;
@@ -313,7 +336,7 @@
                     margin: 0;
                 }
             }
-            
+
             /*Blog*/
             #cuerpoBlog{
                 position: relative;
@@ -324,7 +347,7 @@
                 height: auto;
                 text-align: center;
             }
-            
+
             #tituloB{
                 color:yellow;
                 font-size:30px;   
@@ -339,14 +362,14 @@
             #descripcionBlog{
                 padding: 30px;
             }
-            
 
-            
-            
+
+
+
             /*Fin añadir Partido*/
         </style>
     </head>
-   
+
     <body>
         @include('partials.navbar')
         <div  class="container main">
