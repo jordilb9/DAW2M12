@@ -23,6 +23,8 @@ Route::get('/Blog', function () {
     return view('Blog');
 });
 
+Route::get('/AddPartido', function (){
+    return view('AddPartido');
 Route::get('/CargarBlog', "BlogController@cargarBlog");
 
 Route::get('/AñadirBlog', function () {
