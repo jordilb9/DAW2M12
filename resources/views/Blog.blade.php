@@ -13,10 +13,11 @@
         @endif
     @endif
 </div>
-<div id="cuerpoBlog">
-        <p id='tituloB' class="text-left">&nbsp; Ultima Noticia</p>
-        <img id="ImgCentralB" src="{{asset('assets/images/blogImg.jpg')}}">
-        <p></p>
-</div>
-
+    @foreach( $resultado as $select )
+        <div id="cuerpoBlog">
+                <p id='tituloB' class="text-left">&nbsp; {{$select->Titulo}}</p>
+                <img id="ImgCentralB" src="{{$select->Imagen}}">
+                <p id="descripcionBlog">{{$select->Descripcion}}</p>
+        </div>
+    @endforeach
 @stop

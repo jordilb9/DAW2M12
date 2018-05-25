@@ -328,6 +328,16 @@
             #tituloB{
                 color:yellow;
                 font-size:30px;   
+                padding-top: 10px;
+            }
+            
+            #fileBlog{    
+             padding-bottom:40px;  
+             padding-top:6px;
+            }
+            
+            #descripcionBlog{
+                padding: 30px;
             }
             
 

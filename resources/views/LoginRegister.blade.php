@@ -89,32 +89,42 @@
                             </div>  
                         </div>
  
-                        <div class="form-group{{isset($RegistroInvalido) ? ' has-error' : '' }}">
+                        <div class="form-group{{isset($RegistroInvalidoCorreo) ? ' has-error' : '' }}">
                             <div class="col-md-8 col-md-offset-2">
                                 <input id="email" type="text" class="form-control" name="email" placeholder="E-Mail"  required>
+                                @if (isset($RegistroInvalidoCorreo))
+                                        <span class="help-block">
+                                            <strong>{{$RegistroInvalidoCorreo}}</strong>
+                                        </span>
+                                @endif
                             </div>  
                         </div>
                         
-                        <div class="form-group{{isset($RegistroInvalido) ? ' has-error' : '' }}">
+                        <div class="form-group{{isset($RegistroInvalidoNick) ? ' has-error' : '' }}">
                             <div class="col-md-8 col-md-offset-2">
                                 <input id="nickPaladins" type="text" class="form-control" name="nickPaladins" placeholder="Nick Paladins"  required>
+                                @if (isset($RegistroInvalidoNick))
+                                        <span class="help-block">
+                                            <strong>{{$RegistroInvalidoNick}}</strong>
+                                        </span>
+                                @endif
                             </div>  
                         </div>
                         
-                        <div class="form-group{{isset($RegistroInvalido) ? ' has-error' : '' }}">
+                        <div class="form-group{{isset($RegistroInvalidoUser) ? ' has-error' : '' }}">
                             <div class="col-md-8 col-md-offset-2">
                                 <input id="userReg" type="text" class="form-control" name="user" placeholder="Username"  required>
+                                @if (isset($RegistroInvalidoUser))
+                                        <span class="help-block">
+                                            <strong>{{$RegistroInvalidoUser}}</strong>
+                                        </span>
+                                @endif
                             </div>  
                         </div>
 
-                        <div class="form-group{{isset($RegistroInvalido) ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <div class="col-md-8 col-md-offset-2">
                                 <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
-                                   @if (isset($RegistroInvalido))
-                                        <span class="help-block">
-                                            <strong>{{$RegistroInvalido}}</strong>
-                                        </span>
-                                    @endif
                             </div>
                         </div>
 

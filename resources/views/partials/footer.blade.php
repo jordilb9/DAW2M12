@@ -25,6 +25,7 @@
                         <h4>Panel de administrador</h4>
                         <ul class="list-unstyled">
                             <li><a href="{{url('/AñadirPartido')}}">Añadir partido</a></li>
+                            <li><a href="{{url('/AñadirBlog')}}">Añadir Blog</a></li>
                         </ul>
                     </div>
                 </div>

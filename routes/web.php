@@ -23,8 +23,10 @@ Route::get('/Blog', function () {
     return view('Blog');
 });
 
-Route::get('/EntradaBlog', function () {
-    return view('EntradaBlog');
+Route::get('/CargarBlog', "BlogController@cargarBlog");
+
+Route::get('/AñadirBlog', function () {
+    return view('AñadirBlog');
 });
 
 Route::get('AñadirPartido', function (){
@@ -38,6 +40,8 @@ Route::post('/Login', "LoginRegisterController@login");
 Route::post('/Register', "LoginRegisterController@register");
 
 Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
+
+Route::post('/NuevoBlog', "BlogController@newBlog");
 
 //pelopicopata
 //66666
