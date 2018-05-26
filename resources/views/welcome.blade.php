@@ -268,8 +268,9 @@
             }
 
             #nuevaEntrada{
-                float:right;
-                margin-top:10%;
+                position:absolute;
+                top:16%;
+                right: 26%;
             }
 
             #ImgCentralP{
@@ -338,6 +339,11 @@
             }
 
             /*Blog*/
+            
+            #imgBlog{
+                text-align: center;
+            }
+            
             #cuerpoBlog{
                 position: relative;
                 margin-top: -13%;
@@ -361,6 +367,12 @@
             
             #descripcionBlog{
                 padding: 30px;
+                color:black;
+            }
+            
+            #ImgNoticiaB{
+               width: 80%;
+               height: 50%;
             }
 
 

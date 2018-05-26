@@ -13,13 +13,15 @@ class BlogController extends Controller
     
     function newBlog(Request $request){
         
-           $image = $_FILES[$request->fileBlo]['tmp_name'];
-           $imgContent = addslashes(file_get_contents($image));
+//           $image = $_FILES[$request->fileBlo]['tmp_name'];
+//           $imgContent = addslashes(file_get_contents($image));
+            $imagen = file_get_contents($request->fileBlog);
+        
 
            $new = new Blog;
            $new->Titulo=$request->titulo;
            $new->Descripcion=$request->descriptionBlog;
-           $new->Imagen=$imgContent; 
+           $new->Imagen=$imagen; 
            $new->FechaEntrada =date('Y-m-d H:i:s');
            $new->save();
 

@@ -7,7 +7,7 @@
     <img id="ImgCentralB" src="{{asset('assets/images/logo1.png')}}">
   @if(Session::has('Rango'))
         @if (Session::get('Rango')==2)
-            <a class="btn btn-warning" id='nuevaEntrada' href="/DAW2M12/public/AñadirEntrada" role="button">
+            <a class="btn btn-warning" id='nuevaEntrada' href="{{url('/AñadirBlog')}}" role="button">
                 Añadir Entrada
             </a>
         @endif
@@ -16,7 +16,7 @@
     @foreach( $resultado as $select )
         <div id="cuerpoBlog">
                 <p id='tituloB' class="text-left">&nbsp; {{$select->Titulo}}</p>
-                <img id="ImgCentralB" src="{{$select->Imagen}}">
+                <img id="ImgNoticiaB" src=" data:image/jpg; base64 ,{{base64_encode($select->Imagen)}}">
                 <p id="descripcionBlog">{{$select->Descripcion}}</p>
         </div>
     @endforeach
