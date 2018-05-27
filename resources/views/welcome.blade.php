@@ -366,7 +366,10 @@
             }
             
             #descripcionBlog{
-                padding: 30px;
+                padding-bottom: 10%;
+                padding-top: 2%;
+                padding-left: 10%;
+                padding-right: 10%;
                 color:black;
             }
             

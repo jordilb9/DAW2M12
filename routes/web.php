@@ -23,6 +23,18 @@ Route::get('/Blog', function () {
     return view('Blog');
 });
 
+Route::get('/Liga', function () {
+    return view('Liga');
+});
+
+Route::get('/Equipo', function () {
+    return view('Equipo');
+});
+
+Route::get('/Equipos', function () {
+    return view('Equipos');
+});
+
 Route::get('/AddPartido', function (){
     return view('AddPartido');
 });
@@ -33,7 +45,7 @@ Route::get('/AñadirBlog', function () {
     return view('AñadirBlog');
 });
 
-Route::get('AñadirPartido', function (){
+Route::get('/AñadirPartido', function (){
     return view('AñadirPartido');
 });
 
