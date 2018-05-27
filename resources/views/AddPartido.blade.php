@@ -79,7 +79,7 @@
                     .done(function (data) {
                         mapa = data[0].Map_Game;
                         hora = data[0].Entry_Datetime;
-                        $.get("../public/AddPartido2", {mapa: mapa, hora: hora})
+                        $.get("../public/AddPartido2", {hora: hora, mapa: mapa})
                                 .done(function (data) {
                                     alert(data)
                                 })
@@ -104,10 +104,9 @@
                             $.get("../public/AddJugador", {nombre: nombre, heroe: heroe, kills: kills, assists: assists,
                                 deaths: deaths, oro: oro, opm: opm, dmg: dmg, recibido: recibido, heal: heal, mitigado: mitigado, racha: racha, objetivo: objetivo})
                                     .done(function (data) {
-                                        alert(data)
+                                        
                                     })
                                     .fail(function () {
-                                        alert("peta")
                                     });
                         }
 

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Usuario;
 use App\Logs;
 use App\Partida;
-use APP\JugadorPartida;
-use APP\Personaje;
+use App\JugadorPartida;
+use App\Personaje;
 
 class AddJugadorController extends Controller {
 
@@ -53,7 +53,16 @@ class AddJugadorController extends Controller {
     }
 
     public function actualizaPersonajes(Request $request) {
-        $personaje->IdPersonaje = $request->NombrePersonaje;
+        
+        $resultat = Personaje::where('NombrePersonaje', '=', 'Androxus')->get();
+
+        if (count($resultat) == 1) {
+            Personaje::truncate();;
+        }
+        
+        $Personaje = new Personaje;
+        $personaje->IdPersonaje = $request->id;
+        $personaje->NombrePersonaje = $request->nombre;
         $personaje->Rol = $request->rol;
         $personaje->Descripcion = $request->lore;
         $personaje->save();

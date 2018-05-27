@@ -23,8 +23,9 @@
                     <div class="footer-pad">
                         <h4>Panel de administrador</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{{url('/AñadirPartido')}}">Añadir partido</a></li>
+                            <li><a href="{{url('/AddPartido')}}">Añadir partido</a></li>
                             <li><a href="{{url('/AñadirBlog')}}">Añadir Blog</a></li>
+                            <li><a href="{{url('/ActulizaPersonajes')}}">Actualiza personajes</a></li>
                         </ul>
                     </div>
                 </div>

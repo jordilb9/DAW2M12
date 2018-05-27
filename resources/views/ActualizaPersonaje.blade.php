@@ -4,6 +4,7 @@
 <div class="container ">
     <div class="featurette">
         <div class="featurette-inner text-center">
+            {{ csrf_field() }}
             <button id="actualiza" type="button" class="btn btn-warning">Actualiza Personajes</button>
         </div>
     </div>
@@ -62,24 +63,24 @@
             var hasheo2 = devID + metodo2 + authkey + timestamp;
             var signature2 = md5(hasheo2)
             var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + "1";
-            var nombre, rol, lore, imagen;
+            var nombre, rol, lore, imagen, id;
             $.ajax({url: cadena2})
                     .done(function (data) {
                         console.log(data);
-                        for (var i = 0; i < data.length; i++) {
-                            nombre = data[i].Name;
+                            id = data[0].id;
+                            nombre = data[0].Name;
                             console.log(nombre);
-                            rol = data[i].Roles;
-                            lore = data[i].Lore;
-                            imagen = data[i].ChampionIcon_URL;
-                            $.get("../public/AddPersonaje", {nombre: nombre, rol: rol, lore: imagen})
+                            rol = data[0].Roles;
+                            lore = data[0].Lore;
+                            imagen = data[0].ChampionIcon_URL;
+                            $.get("../public/AddPersonaje", {id: id, nombre: nombre, rol: rol, lore: lore, imagen: imagen})
                                     .done(function (data) {
                                         alert(data)
                                     })
                                     .fail(function () {
-                                        alert("peta")
+                                        alert("peta");
                                     });
-                        }
+                        
 
                     })
                     .fail(function (jqXHR, text, errorThrown) {
