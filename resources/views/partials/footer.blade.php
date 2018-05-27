@@ -26,6 +26,7 @@
                             <li><a href="{{url('/AddPartido')}}">Añadir partido</a></li>
                             <li><a href="{{url('/AñadirBlog')}}">Añadir Blog</a></li>
                             <li><a href="{{url('/ActulizaPersonajes')}}">Actualiza personajes</a></li>
+                            <li><a href="{{url('/AñadirEquipo')}}">Añadir Equipo</a></li>
                         </ul>
                     </div>
                 </div>
