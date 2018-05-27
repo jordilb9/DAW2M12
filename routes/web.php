@@ -19,6 +19,14 @@ Route::get('/LoginRegister', function () {
     return view('LoginRegister');
 });
 
+Route::get('/RecuperarPass', function () {
+    return view('RecuperarPass');
+});
+
+Route::get('/ResetPassword', function () {
+    return view('ResetPassword');
+});
+
 Route::get('/Blog', function () {
     return view('Blog');
 });
@@ -39,8 +47,6 @@ Route::get('/AddPartido', function (){
     return view('AddPartido');
 });
     
-Route::get('/CargarBlog', "BlogController@cargarBlog");
-
 Route::get('/AñadirBlog', function () {
     return view('AñadirBlog');
 });
@@ -66,6 +72,12 @@ Route::post('/Register', "LoginRegisterController@register");
 Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
 
 Route::post('/NuevoBlog', "BlogController@newBlog");
+
+Route::get('/CargarBlog', "BlogController@cargarBlog");
+
+Route::post('/NewPassword', "RecuperarPassController@enviarCorreo");
+
+Route::get('/GuardarNuevaPass', "RecuperarPassController@newPass");
 
 //pelopicopata
 //66666

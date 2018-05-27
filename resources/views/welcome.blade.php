@@ -45,7 +45,8 @@
             #ImgLoginRegister{
                 height: 50vh;
                 width: 40vh;
-                margin-top:-240px;
+                margin-top:-350px;
+                margin-left:-100px;
             }
 
             .navbar-alignit .navbar-header {
@@ -282,6 +283,11 @@
                 width: 50%;
                 height: auto;
             }
+            
+            #ImgCentralLR{
+                width: 50%;
+                height: auto;
+            }
 
             #carousel-example-generic{
                 margin:5%;
@@ -377,7 +383,32 @@
                width: 80%;
                height: 50%;
             }
-
+            
+            /*LoginRegistro*/
+    
+            #imgLoginRegister{
+                text-align: center;
+                margin-bottom:-50px;
+            }
+            
+            /*RecuperarPass*/
+            #imgRecuperarPass{
+                text-align: center;
+            }
+            
+            #ImgCentralRP{
+                 width: 50%;
+                height: auto;
+            }
+            
+            #RecuperarPassword{
+                text-align: center;
+            }
+            
+            #containerRecuperarPass{
+                margin-top:-10px;
+               margin-bottom: 55px;
+            }
 
 
 

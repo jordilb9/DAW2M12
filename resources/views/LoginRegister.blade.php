@@ -1,8 +1,14 @@
 @extends('welcome')
 
 @section('content')
-    <div class="container ">
+
+    
+    <div class="container " id="cuerpoLoginRegistro">
     <div class="row">
+        <div class="container" id="imgLoginRegister">
+            <img id="ImgCentralLR" src="{{asset('assets/images/logo1.png')}}">
+        </div>
+        
         <div class="col-md-4 ">
             <br><br>
             <div class="panel panel-default">
@@ -38,7 +44,7 @@
                                 </button>
                                 <br>
 
-                                <a class="btn btn-link " href="">
+                                <a class="btn btn-link " href="{{url('/RecuperarPass')}}">
                                     ¿Olvidaste tu contraseña?
                                 </a>
                             </div>
@@ -128,8 +134,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                        <div class="g-recaptcha col-md-8 col-md-offset-2
-                             " data-sitekey="6LdiBFsUAAAAAFdUVDkoictOwRlGHWmNUBH1s462"></div>
+                        <div class="g-recaptcha col-md-8 col-md-offset-2" data-sitekey="6LdiBFsUAAAAAFdUVDkoictOwRlGHWmNUBH1s462"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-0" id="botonRegistro">
@@ -145,7 +150,7 @@
         </div>
         
         
-        <div class="col-md-4">
+        <div class="col-md-0">
                   <img id="ImgLoginRegister" src="{{asset('assets/images/header-grohk.png')}}">
         </div>
 
