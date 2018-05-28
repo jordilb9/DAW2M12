@@ -48,37 +48,37 @@
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador2" type="text" class="form-control" name="jugado2" placeholder="Jugador 2"  required>
+                        <input id="j1" type="text" class="form-control" name="j1" placeholder="Jugador 2"  required>
                     </div>  
                 </div> 
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador3" type="text" class="form-control" name="jugado3" placeholder="Jugador 3"  required>
+                        <input id="j2" type="text" class="form-control" name="j2" placeholder="Jugador 3"  required>
                     </div>  
                 </div> 
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador4" type="text" class="form-control" name="jugado4" placeholder="Jugador 4"  required>
+                        <input id="j3" type="text" class="form-control" name="j3" placeholder="Jugador 4"  required>
                     </div>  
                 </div> 
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador5" type="text" class="form-control" name="jugado5" placeholder="Jugador 5"  required>
+                        <input id="j4" type="text" class="form-control" name="j4" placeholder="Jugador 5"  required>
                     </div>  
                 </div> 
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador6" type="text" class="form-control" name="jugado6" placeholder="Jugador 6"  required>
+                        <input id="j5" type="text" class="form-control" name="j5" placeholder="Jugador 6"  required>
                     </div>  
                 </div> 
                 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-2">
-                        <input id="jugador7" type="text" class="form-control" name="jugado7" placeholder="Jugador 7"  required>
+                        <input id="j6" type="text" class="form-control" name="j6" placeholder="Jugador 7"  required>
                     </div>  
                 </div> 
 
