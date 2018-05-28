@@ -11,8 +11,8 @@
                         <ul class="list-unstyled">
                             <li><a href="{{url('/')}}">Menú Principal</a></li>
                             <li><a href="{{url('/CargarBlog')}}">Blog</a></li>
-                            <li><a href="#">Liga</a></li>
-                            <li><a href="#">Equipos</a></li>
+                            <li><a href="{{url('/Liga')}}">Liga</a></li>
+                            <li><a href="{{url('/Equipos')}}">Equipos</a></li>
                             <li><a href="#">Personajes</a></li>
                         </ul>
                     </div>
