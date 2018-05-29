@@ -7,6 +7,7 @@ use App\Logs;
 use App\Equipo;
 use App\Usuario;
 use Illuminate\Support\Facades\Session;
+use Response;
 
 class AddEquipo extends Controller
 {
@@ -14,7 +15,7 @@ class AddEquipo extends Controller
         
 //           $image = $_FILES[$request->fileBlo]['tmp_name'];
 //           $imgContent = addslashes(file_get_contents($image));
-            $imagen = file_get_contents($request->fileBlog);
+           $imagen = file_get_contents($request->fileBlog);
         
 
            $new = new Equipo;
@@ -25,28 +26,55 @@ class AddEquipo extends Controller
            $new->FechaCreacion =date('Y-m-d H:i:s');
            $new->save();
            
-           $resultat = Equipo::where('Nombre', '=', $request->nombre)->get();
-           //echo $resultat->IdEquipo;
-           $jugador = new Usuario;
-           $jugador = Usuario::find($request->capitan);
-           $jugador->Equipo=$resultat[0]->IdEquipo;
-           $jugador = Usuario::find($request->jugador2);
-           $jugador->Equipo=$resultat[0]->IdEquipo;
-           $jugador = Usuario::find($request->jugador3);
-           $jugador->Equipo=$resultat[0]->IdEquipo;
-           $jugador = Usuario::find($request->jugador4);
-           $jugador->Equipo=$resultat[0]->IdEquipo;
-           $jugador = Usuario::find($request->jugador5);
-           $jugador->Equipo=$resultat[0]->IdEquipo;
+           $log = new Logs;
+           $log->IdUsuario=Session::get('idUsuario');
+           $log->Descripcion="El usuario ".Session::get('User')." a creado el nuevo equipo ".$new->Nombre;
+           $log->Fechaq =date('Y-m-d H:i:s');
+           $log->save();
+           
+           $a=$new->IdEquipo;
+           
+           $capitan = Usuario::where('User', '=', $request->capitan)->update(array('Equipo' => $a));
            
            $log = new Logs;
            $log->IdUsuario=Session::get('idUsuario');
-           $log->Descripcion="El usuario ".Session::get('User')." a creado un nuevo equipo";
+           $log->Descripcion="El usuario ".Session::get('User')." a añadido a ".$request->capitan." al equipo ".$new->Nombre;
+           $log->Fechaq =date('Y-m-d H:i:s');
+           $log->save();
+           
+           $jugador2 = Usuario::where('User', '=', $request->j1)->update(array('Equipo' => $a));
+           
+           $log = new Logs;
+           $log->IdUsuario=Session::get('idUsuario');
+           $log->Descripcion="El usuario ".Session::get('User')." a añadido a ".$request->j1." al equipo ".$new->Nombre;
+           $log->Fechaq =date('Y-m-d H:i:s');
+           $log->save();
+           
+           $jugador3 = Usuario::where('User', '=', $request->j2)->update(array('Equipo' => $a));
+           
+           $log = new Logs;
+           $log->IdUsuario=Session::get('idUsuario');
+           $log->Descripcion="El usuario ".Session::get('User')." a añadido a ".$request->j2." al equipo ".$new->Nombre;
+           $log->Fechaq =date('Y-m-d H:i:s');
+           $log->save();
+           
+           $jugador4 = Usuario::where('User', '=', $request->j3)->update(array('Equipo' => $a));
+           
+           $log = new Logs;
+           $log->IdUsuario=Session::get('idUsuario');
+           $log->Descripcion="El usuario ".Session::get('User')." a añadido a ".$request->j3." al equipo ".$new->Nombre;
+           $log->Fechaq =date('Y-m-d H:i:s');
+           $log->save();
+           
+           $jugador5 = Usuario::where('User', '=', $request->j4)->update(array('Equipo' => $a));
+
+           $log = new Logs;
+           $log->IdUsuario=Session::get('idUsuario');
+           $log->Descripcion="El usuario ".Session::get('User')." a añadido a ".$request->j4." al equipo ".$new->Nombre;
            $log->Fechaq =date('Y-m-d H:i:s');
            $log->save();
            
            
            return redirect(url('/Equipos'));
-     
     }
 }
