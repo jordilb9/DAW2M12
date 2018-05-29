@@ -42,9 +42,6 @@ class LigaController extends Controller
 
         $resultado = Liga::orderBy('Id', 'desc')->take(1)->get();
         
-//        echo "<pre>";
-//        print_r($resultado);
-//        echo "</pre>";
         return view('Liga',['resultado'=> $resultado]);
         
     }

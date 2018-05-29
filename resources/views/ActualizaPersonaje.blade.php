@@ -73,9 +73,9 @@
                             rol = data[0].Roles;
                             lore = data[0].Lore;
                             imagen = data[0].ChampionIcon_URL;
-                            $.get("../public/AddPersonaje", {id: id, nombre: nombre, rol: rol, lore: lore, imagen: imagen})
+                            $.get("AddPersonaje", {datos: id, nombre: nombre, rol: rol, lore: lore, imagen: imagen})
                                     .done(function (data) {
-                                        alert(data)
+                                        alert(data);
                                     })
                                     .fail(function () {
                                         alert("peta");
