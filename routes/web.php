@@ -64,6 +64,11 @@ Route::get('/AñadirEquipo', function(){
 });
 
 Route::get('/AddPartida', 'AddJugadorController@addPartido');
+Route::get('/AñadirLiga', function(){
+    return view('AñadirLiga');
+});
+
+Route::get('/AddPartido2', 'AddJugadorController@addPartido');
 
 Route::get('/AddPersonaje', 'AddJugadorController@actualizaPersonajes');
 
@@ -88,6 +93,10 @@ Route::get('/CargarBlog', "BlogController@cargarBlog");
 Route::post('/NewPassword', "RecuperarPassController@enviarCorreo");
 
 Route::get('/GuardarNuevaPass', "RecuperarPassController@newPass");
+
+Route::post('/AddLiga', "LigaController@newLiga");
+
+Route::get('/CargarLiga', "LigaController@cargarLiga");
 
 //pelopicopata
 //66666
