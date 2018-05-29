@@ -271,7 +271,7 @@
             #nuevaEntrada{
                 position:absolute;
                 top:16%;
-                right: 26%;
+                right: 15%;
             }
 
             #ImgCentralP{
@@ -406,10 +406,55 @@
             }
             
             #containerRecuperarPass{
-                margin-top:-10px;
+               margin-top:-10px;
                margin-bottom: 55px;
             }
+            
+            /*Liga*/
+            #imgLiga{
+                text-align: center;
+            }
+            
+            #ImgCentralL{
+                width: 50%;
+                height: auto;
+            }
+            
+            #cuerpoLiga{
+                position: relative;
+                margin-top: -13%;
+                margin-bottom: 5%;
+                padding-bottom: 5%;
+                background-color:#f58484;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            
+            #tituloCL,#tituloJL{
+                color:yellow;
+                font-size:30px;   
+                padding-top: 10px;
+            }
+            
+            #ImgCL,#ImgJL{
+               width: 80%;
+               height: 50%;
+            }
+            
+            #nuevaLiga,#botonLiga{
+                text-align: center;
+            }
+            
+            #fileLigaClasi,#fileLigaJor{    
+             padding-bottom:40px;  
+             padding-top:6px;
+            }
 
+            #containerLiga{
+               margin-top:-11px;
+               margin-bottom: 50px;
+            }
 
 
             /*Fin añadir Partido*/

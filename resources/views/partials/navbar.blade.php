@@ -14,7 +14,7 @@
         <div id="navbar4" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{url('/CargarBlog')}}">Blog</a></li>
-                <li><a href="{{url('/Liga')}}">Liga</a></li>
+                <li><a href="{{url('/CargarLiga')}}">Liga</a></li>
                 <li><a href="{{url('/Equipos')}}">Equipos</a></li>
                 <li><a href="#">Personajes</a></li>  
             </ul>

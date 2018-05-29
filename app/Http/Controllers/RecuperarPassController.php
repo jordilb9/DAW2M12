@@ -22,9 +22,9 @@ class RecuperarPassController extends Controller {
             $log->Fechaq = date('Y-m-d H:i:s');
             $log->save();
             
-            ini_set("SMTP","smtp.gmail.com");
-            ini_set("smtp_port","587");
-            ini_set("sendmail_from","lep@paladins.com"); 
+//            ini_set("SMTP","smtp.gmail.com");
+//            ini_set("smtp_port","25");
+//            ini_set("sendmail_from","jordi.lb92@gmail.com"); 
    
             $mail = "Escuchamos que perdió su contraseña de LEPaladins. ¡Lo siento por eso!
 
@@ -41,7 +41,7 @@ class RecuperarPassController extends Controller {
             $headers = "MIME-Version: 1.0\r\n"; 
             $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
             //dirección del remitente 
-            $headers .= "From: LEPaladins < lep@paladins.com >\r\n";
+            $headers .= "From: LEPaladins < jordi.lb92@gmail.com >\r\n";
             //Enviamos el mensaje a tu_dirección_email 
             $bool = mail($request->emailRecuperar,$titulo,$mail,$headers);
             
