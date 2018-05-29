@@ -75,6 +75,20 @@ class AddEquipo extends Controller
            $log->save();
            
            
-           return redirect(url('/Equipos'));
+           return redirect(url('/CargarEquipos'));
+    }
+    
+    function cargarEquipos(Request $request){
+
+        $resultado = Equipo::all();  
+
+        return view('Equipos',['resultado'=> $resultado]);
+        
+    }
+    
+    function cargarEquipo(Request $request){
+        $resultado = Usuario::all();
+        $equipo = Equipo::all();
+        return view('Equipo',['resultado'=> $resultado, 'equipo'=> $equipo, 'id'=> $request->id]);
     }
 }

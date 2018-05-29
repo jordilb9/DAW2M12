@@ -59,18 +59,11 @@ Route::get('/ActulizaPersonajes', function(){
     return view('ActualizaPersonaje');
 });
 
-Route::get('/Equipos', function(){
-    return view('Equipos');
-});
-
-Route::get('/Equipo', function(){
-    return view('Equipo');
-});
-
 Route::get('/AñadirEquipo', function(){
     return view('AñadirEquipo');
 });
 
+Route::get('/AddPartida', 'AddJugadorController@addPartido');
 Route::get('/AñadirLiga', function(){
     return view('AñadirLiga');
 });
@@ -90,6 +83,10 @@ Route::get('/CerrarSesion', 'CerrarSesionController@cerrarSesion');
 Route::post('/NuevoBlog', "BlogController@newBlog");
 
 Route::post('/NuevoEquipo','AddEquipo@newEquipo');
+
+Route::get('/CargarEquipos','AddEquipo@cargarEquipos');
+
+Route::get('/CargaEquipos/{id}', 'AddEquipo@cargarEquipo');
 
 Route::get('/CargarBlog', "BlogController@cargarBlog");
 
