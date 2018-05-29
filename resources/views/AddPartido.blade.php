@@ -4,7 +4,7 @@
 <div class="container ">
     <div class="featurette">
         <div class="featurette-inner text-center">
-            <form role="form" class="search" method="POST" action="AddJugador">
+            <form role="form" class="search">
                 {{ csrf_field() }}
                 <h3 class="no-margin-top h1">Añade una ID</h3>
                 <div class="input-group input-group-lg">
@@ -79,13 +79,14 @@
                     .done(function (data) {
                         mapa = data[0].Map_Game;
                         hora = data[0].Entry_Datetime;
-                        $.get("../public/AddPartido2", {hora: hora, mapa: mapa})
+                        $.get("../public/AddPartida", {mapa: mapa})
                                 .done(function (data) {
                                     alert(data)
                                 })
-                                .fail(function () {
-                                    alert("peta")
-                                });
+                                .fail(function (xhr, status, error) {
+                                    var err = eval("(" + xhr.responseText + ")");
+  alert(err.Message);
+                                });/*
                         for (var i = 0; i < data.length; i++) {
                             nombre = data[i].playerName;
                             heroe = data[i].Reference_Name;
@@ -109,7 +110,7 @@
                                     .fail(function () {
                                     });
                         }
-
+*/
                     })
                     .fail(function (jqXHR, text, errorThrown) {
                         console.log(jqXHR + "---" + text + "---" + errorThrown);
