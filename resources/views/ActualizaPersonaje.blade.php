@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-<div class="container ">
+<div class="container " id="actualizarPersonaje">
     <div class="featurette">
         <div class="featurette-inner text-center">
             {{ csrf_field() }}

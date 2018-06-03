@@ -3,40 +3,40 @@
 @section('content')
 
 
-<div class="container" id="imgBlog">
-    <img id="ImgCentralB" src="{{asset('assets/images/logo1.png')}}">
+<div class="container" id="imgPEquipo">
+    <img id="ImgCentralE" src="{{asset('assets/images/logo1.png')}}">
 
 </div>
 
-<div id="cuerpoBlog">
+<div id="cuerpoEquipo">
     <div class="row">
         <div>
             @foreach( $equipo as $algo )
             @if( $algo->IdEquipo == $id )
-            <h2 style="color:yellow;min-height: 75px; margin:10px 0 10px 0; font-size: 90px;">
+            <p id="nombreEquipo">
                 {{ $algo->Nombre}}
-
-            </h2>
-            <img src=" data:image/jpg; base64 ,{{base64_encode($algo->Logo)}}" style="height: auto; width: 20%; float: left"/>
-            <p>{{$algo->Descripcion}}</p>
+            </p>
+            <img id="imagenEquipo" src=" data:image/png; base64 ,{{base64_encode($algo->Logo)}}" />
+            <p id="descripcionEquipo">{{$algo->Descripcion}}</p>
 
             @endif
             @endforeach
         </div>
 
-        <div>
+        <div id="allUserTeam">
             @foreach( $resultado as $select )
+            <div id="userEquipo">
             @if( $select->Equipo == $id )
             <p>{{$select->PaladinsNick}}</p>
             @if( $select->Foto == null )
-            <img src="{{asset('assets/images/userlogo.png')}}" style="height: auto; width: 20%"/>
+            <img id="userLogo" src="{{asset('assets/images/userlogo.png')}}"/>
             @else
-            <img src=" data:image/jpg; base64 ,{{base64_encode($select->Foto)}}" style="height: auto; width: 100%"/>
+            <img id="fotoUser" src=" data:image/jpg; base64 ,{{base64_encode($select->Foto)}}"/>
             @endif
             @endif
+            </div>
             @endforeach
         </div>
-
 
         <!--
         <div class="col-xs-6 col-sm-4 col-md-3 text-center" style="padding: 20px">
@@ -47,7 +47,6 @@
                 </h4>
             </a>
         </div>-->
-
 
     </div>
 </div>

@@ -4,7 +4,7 @@
 
 <div class="col-md-8 col-md-offset-2">
     <br><br>
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="containerAddEquipo">
         <div class="panel-body">
             <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="NuevoEquipo">
                 {{ csrf_field() }}

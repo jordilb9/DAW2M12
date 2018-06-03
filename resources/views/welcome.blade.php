@@ -353,7 +353,7 @@
             #cuerpoBlog{
                 position: relative;
                 margin-top: -13%;
-                margin-bottom: 5%;
+                margin-bottom: 13%;
                 background-color:#f58484;
                 width: 100%;
                 height: auto;
@@ -384,6 +384,11 @@
                height: 50%;
             }
             
+            #containerAddBlog{
+               margin-top:1%;
+               margin-bottom: 10%;
+            }
+            
             /*LoginRegistro*/
     
             #imgLoginRegister{
@@ -391,6 +396,9 @@
                 margin-bottom:-50px;
             }
             
+            #exampleModalLabel{
+                text-align: center;
+            }
             /*RecuperarPass*/
             #imgRecuperarPass{
                 text-align: center;
@@ -452,10 +460,90 @@
             }
 
             #containerLiga{
+               margin-top:1%;
+               margin-bottom: 10%;
+            }
+            
+            /*Equipo*/
+            #containerAddEquipo{
                margin-top:-11px;
                margin-bottom: 50px;
             }
-
+            
+            #imgPEquipo{
+                text-align: center;
+            }
+            
+            #ImgCentralE{
+                width: 50%;
+                height: auto;
+            }
+            
+            #cuerpoEquipo{
+                position: relative;
+                margin-top: -13%;
+                margin-bottom: 5%;
+                padding-bottom: 5%;
+                background-color:#f58484;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+         
+            #nombreEquipo{
+                color:yellow;
+                font-size:50px;   
+                padding-top: 20px;
+                margin-left: -20px;
+                text-align: center;
+            }
+            
+            #imagenEquipo{
+                width: 30%;
+                height: auto;
+                float:left;
+                padding-left:50px;
+                margin-top:-50px;
+            }
+            
+            #descripcionEquipo{
+                padding-bottom: 10%;
+                padding-top: 2%;
+                padding-left: 10%;
+                padding-right: 10%;
+                color:black;
+            }
+            
+            #userLogo,#fotoUser{
+                width: 100%;
+                height: auto;
+            }
+            
+            #userEquipo{
+                float:left;
+                width: 10%;
+                height: auto;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            
+            #allUserTeam{
+                text-align: center;
+                width: 100%;
+                height: auto;
+                margin-left: 14%;
+            }
+            
+            /*Actualizar Personaje*/
+            
+            #actualizarPersonaje{
+                margin-bottom: 57%;
+            }
+            
+            /*Añadir Partido*/
+            #addPartido{
+                margin-bottom: 44%;
+            }
 
             /*Fin añadir Partido*/
         </style>
