@@ -8,110 +8,49 @@ use App\Logs;
 use App\Partida;
 use App\JugadorPartida;
 use App\Personaje;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AddJugadorController extends Controller {
 
     //
     public function addPartido(Request $request) {
         echo $request->mapa . " " . $request->hora;
-
-        $partida = new Partida;
-        $partida->EquipoL = 1;
-        $partida->EquipoV = 2;
-        $partida->Mapa = $request->mapa;
-        $partida->Fecha = "2018-05-24";
-        $partida->save();
-
-        $log = new Logs;
-        $log->IdUsuario = Session::get('idUsuario');
-        $log->Descripcion = "El usuario " . Session::get('User') . " ha creado la partida " . $request->mapa;
-        $log->Fechaq = date('Y-m-d H:i:s');
-        $log->save();
+        
+        DB::table('partida')->insert(['EquipoL' => 1, 
+                'EquipoV' => 2, 'Mapa' => $request->mapa, 'Fecha' => date('Y-m-d H:i:s')]);
+            
+        DB::table('logs')->insert(['IdUsuario' => Session::get('idUsuario'), 
+                'Descripcion' => 'El usuario '.Session::get('User').' ha añadido la partida en '.$request->mapa,
+                'Fechaq' => date('Y-m-d H:i:s')]);
     }
 
     public function addJugador(Request $request) {
-        $jugador = new JugadorPartida;
-        $jugador->IdPartida = $request->IdPartida;
-        $jugador->IdUsuario = $request->IdUsuario;
-        $jugador->IdPersonaje = $request->IdPersonaje;
-        $jugador->Creditos = $request->oro;
-        $jugador->Kills = $request->kills;
-        $jugador->Deaths = $request->deaths;
-        $jugador->Assists = $request->assists;
-        $jugador->Racha = $request->racha;
-        $jugador->TiempoObj = $request->objetivo;
-        $jugador->Daño = $request->dmg;
-        $jugador->BlocDaño = $request->mitigado;
-        $jugador->Curacion = $request->heal;
-        $jugador->save();
+        sleep(1);
+        $resultat = DB::table('usuario')->select('IdUsuario')->where('PaladinsNick', '=', $request->nombre)->get();
+        $resultat2 = DB::table('partida')->select('IdPartida')->orderBy('IdPartida', 'DESC')->first();
         
-        $log = new Logs;
-        $log->IdUsuario = Session::get('idUsuario');
-        $log->Descripcion = "El usuario " . Session::get('User') . " ha añadido una stat de jugador " . $request->IdPartida;
-        $log->Fechaq = date('Y-m-d H:i:s');
-        $log->save();
+        
+        DB::table('jugadorpartida')->insert(['IdPartida' => $resultat2->IdPartida, 'IdUsuario' => $resultat[0]->IdUsuario, 
+            'IdPersonaje' => $request->personaje, 'Creditos' => $request->oro, 'Kills' => $request->kills, 
+            'Deaths' => $request->deaths, 'Assists' => $request->assists, 'Racha' => $request->racha, 
+            'TiempoObj' => $request->objetivo, 'Daño' => $request->dmg, 'BlocDaño' => $request->mitigado, 
+            'Curacion' => $request->heal]);
     }
-
+    
     public function actualizaPersonajes(Request $request) {
         
-        $resultat = Personaje::where('NombrePersonaje', '=', 'Androxus')->get();
-
-        if (count($resultat) == 1) {
-            Personaje::truncate();;
+        $resultat = Personaje::where('NombrePersonaje', '=', $request->nombre)->get();
+        
+        if (count($resultat) != 1) {
+            sleep(1);
+            DB::table('personaje')->insert(['IdPersonaje' => $request->datos, 
+                'NombrePersonaje' => $request->nombre, 'Rol' => $request->rol, 'Descripcion' => $request->lore, 'Imagen' => $request->imagen]);
+            sleep(1);
+            DB::table('logs')->insert(['IdUsuario' => Session::get('idUsuario'), 
+                'Descripcion' => 'El usuario '.Session::get('User').' ha añadido el personaje '.$request->nombre,
+                'Fechaq' => date('Y-m-d H:i:s')]);
         }
-        
-        $Personaje = new Personaje;
-        $personaje->IdPersonaje = $request->id;
-        $personaje->NombrePersonaje = $request->nombre;
-        $personaje->Rol = $request->rol;
-        $personaje->Descripcion = $request->lore;
-        $personaje->save();
-        
-        $log = new Logs;
-        $log->IdUsuario = Session::get('idUsuario');
-        $log->Descripcion = "El usuario " . Session::get('User') . " ha actualizado la tabla personajes";
-        $log->Fechaq = date('Y-m-d H:i:s');
-        $log->save();
     }
-
-    /* $log = new Logs;
-      $log->IdUsuario = $request->usari;
-      $log->Descripcion = "El usuario " . $request->pass . " a hecho login";
-      $log->Fechaq = date('Y-m-d H:i:s');
-      $log->save(); */
-    //echo "<script>alert(\"holaAMIGO\")</script>";
-    /* echo "hola";
-      $recoger="<scrip>recogerApi()</script>";
-      echo $recoger; */
-    /* session_start();
-
-      $resultat = Usuario::where('IdUsuario','=',$request->input('IdUsuario'))->where('Rango','=','2');
-
-      if(count($resultat)==1){
-      $partida = new Partida;
-      $partida->IdPartida=$request->IdPartida;
-      $partida->EquipoL=$request->EquipoL;
-      $partida->EquipoV=$request->EquipoV;
-      $partida->Mapa=$request->Mapa;
-      $partida->Fecha=$request->Fecha;
-      $partida->save();
-
-
-      $jugador = new JugadorPartida;
-      $jugador->IdPartida=$request->IdPartida;
-      $jugador->IdUsuario=$request->IdUsuario;
-      $jugador->IdPersonaje=$request->IdPersonaje;
-      $jugador->Creditos=$request->Creditos;
-      $jugador->Kills=$request->Kills;
-      $jugador->Deaths=$request->Deaths;
-      $jugador->Assists=$request->Assists;
-      $jugador->Racha=$request->Racha;
-      $jugador->TiempoObj=$request->TiempoObj;
-      $jugador->Daño=$request->Daño;
-      $jugador->BlocDaño=$request->BlocDaño;
-      $jugador->Curacion=$request->Curacion;
-
-
-      } */
 }
 

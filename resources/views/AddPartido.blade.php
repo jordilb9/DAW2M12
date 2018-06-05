@@ -7,6 +7,8 @@
             <form role="form" class="search">
                 {{ csrf_field() }}
                 <h3 class="no-margin-top h1">Añade una ID</h3>
+                    <input id="EquipoL" type="search" placeholder="Equipo Local" class="form-control">
+                    <input id="EquipoV" type="search" placeholder="Equipo Visitante" class="form-control">
                 <div class="input-group input-group-lg">
                     <input id="id" type="search" placeholder="ID" class="form-control">
                     <span class="input-group-btn">
@@ -74,19 +76,19 @@
             var hasheo2 = devID + metodo2 + authkey + timestamp;
             var signature2 = md5(hasheo2)
             var cadena2 = "http://api.paladins.com/paladinsapi.svc/" + metodo2 + formato + "/" + devID + "/" + signature2 + "/" + session + "/" + timestamp + "/" + $('#id').val();
-            var mapa, hora, nombre, heroe, kills, assists, deaths, oro, opm, dmg, recibido, heal, mitigado, racha, objetivo
+            var mapa, personaje, hora, nombre, heroe, kills, assists, deaths, oro, opm, dmg, recibido, heal, mitigado, racha, objetivo
             $.ajax({url: cadena2})
                     .done(function (data) {
                         mapa = data[0].Map_Game;
                         hora = data[0].Entry_Datetime;
                         $.get("../public/AddPartida", {mapa: mapa})
                                 .done(function (data) {
-                                    alert(data)
+                                    //alert(data);
                                 })
                                 .fail(function (xhr, status, error) {
                                     var err = eval("(" + xhr.responseText + ")");
-  alert(err.Message);
-                                });/*
+                                    alert(err.Message);
+                                });
                         for (var i = 0; i < data.length; i++) {
                             nombre = data[i].playerName;
                             heroe = data[i].Reference_Name;
@@ -101,16 +103,19 @@
                             mitigado = data[i].Damage_Mitigated;
                             racha = data[i].Killing_Spree;
                             objetivo = data[i].Objective_Assists;
+                            personaje = data[i].ChampionId;
                             //console.log(nombre+" "+heroe+" "+kills+" "+assists+" "+deaths)
-                            $.get("../public/AddJugador", {nombre: nombre, heroe: heroe, kills: kills, assists: assists,
-                                deaths: deaths, oro: oro, opm: opm, dmg: dmg, recibido: recibido, heal: heal, mitigado: mitigado, racha: racha, objetivo: objetivo})
+                            $.get("../public/AddJugador", {nombre: nombre, heroe: heroe, kills: kills, 
+                                assists: assists, deaths: deaths, oro: oro, opm: opm, dmg: dmg,
+                                recibido: recibido, heal: heal, mitigado: mitigado, racha: racha,
+                                objetivo: objetivo, personaje: personaje, IdPartida: $('#id').val()})
                                     .done(function (data) {
-                                        
+                                        //alert(data);
                                     })
                                     .fail(function () {
                                     });
                         }
-*/
+
                     })
                     .fail(function (jqXHR, text, errorThrown) {
                         console.log(jqXHR + "---" + text + "---" + errorThrown);
