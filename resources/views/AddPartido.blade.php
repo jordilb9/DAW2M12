@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-<div class="container ">
+<div class="container " id="addPartido">
     <div class="featurette">
         <div class="featurette-inner text-center">
             <form role="form" class="search">

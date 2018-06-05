@@ -19,7 +19,7 @@
         @foreach( $resultado as $select )
         <div class="col-xs-6 col-sm-4 col-md-3 text-center" style="padding: 20px">
             <a href="{{ url('/CargaEquipos/'.$select->IdEquipo)}}" style="text-decoration: none">
-                <img id="ImgNoticiaB" src=" data:image/jpg; base64 ,{{base64_encode($select->Logo)}}" style="height: auto; width: 100%"/>
+                <img id="ImgNoticiaB" src=" data:image/png; base64 ,{{base64_encode($select->Logo)}}" style="height: auto; width: 100%"/>
                 <h4 style="color:yellow; min-height: 45px; margin:5px 0 10px 0">
                     {{$select->Nombre}}
                 </h4>

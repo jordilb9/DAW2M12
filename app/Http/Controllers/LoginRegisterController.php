@@ -84,6 +84,8 @@ class LoginRegisterController extends Controller {
                             return view('LoginRegister',['RegistroInvalidoNick'=>'El usuario ya existe']); 
 
                         }else{
+                           $imagen = file_get_contents($request->fileRegister);
+                            
                            $newUser = new Usuario;
                            $newUser->User=$request->user; 
                            $newUser->Contrasenya=$request->password; 
@@ -93,6 +95,7 @@ class LoginRegisterController extends Controller {
                            $newUser->Edad=$request->edad; 
                            $newUser->Nacionalidad =$request->nacionalidad; 
                            $newUser->PaladinsNick=$request->nickPaladins; 
+                           $newUser->Foto=$imagen;
                            $newUser->Rango=1; 
                            $newUser->FechaCreacion=date('Y-m-d H:i:s'); 
                            $newUser->save();
